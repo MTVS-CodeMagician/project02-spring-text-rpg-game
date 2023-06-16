@@ -4,21 +4,21 @@ import com.ohjiraffers.project02springtextrpggame.command.infra.database.UserDB;
 
 public class UserEntity {
 
-    private UserDB userSave = UserDB.getUserInstance();
+    private UserDB userDB = UserDB.getUserInstance();
 
     public String getUserName() {
-        return userSave.getUserName();
+        return userDB.getUserName();
     }
 
     public int getUserLV() {
-        return userSave.getUserLV();
+        return userDB.getUserLV();
     }
 
     public int getUserAttPer() {
-        return userSave.getUserAttPer();
+        return userDB.getUserAttPer();
     }
 
     public int getUserStone() {
-        return userSave.getUserStone();
+        return userDB.getUserStone();
     }
 }
