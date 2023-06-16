@@ -6,9 +6,25 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import static org.junit.jupiter.api.Assertions.*;
 @SpringJUnitConfig
 class UserServiceTest {
-    //해보자고~
 
 //    @Test
+//    void TestUserStone(){
+//        int userStone = 0;
+//        UserService userService =
+//                new UserService();
+//        for (int i = 0; i < 10; i += 2) {
+//            userStone += i;
+//            System.out.println(i + "번째 : " + userEntity.getUserStone);
+//
+//        System.out.println("userStone = " + userEntity.getUserStone());
+//
+//        }
+//
+//
+//        }
+//
+//    }
+
 
 //          FrontController에서 확인
 //

@@ -15,10 +15,13 @@ public class UserService {
             new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.domain.repository");
     UserRepository userRepository = setContext.getBean("userRepository", UserRepository.class);
 
+
+
     //유저 레벨과 스톤의 초깃값
     public UserService(){
         this.userRepository.setUserLV(1);
         this.userRepository.setUserStone(0);
+        this.userRepository.setUserAttPer(75);
     }
 
     // 유저가 공격하는 행동
@@ -27,7 +30,6 @@ public class UserService {
         System.out.println(userEntity.getUserName() + "가 공격하였습니다!!");
 
         // math.random 은 0.0 <= x < 1.0
-
         if (Math.random() * 100 < userEntity.getUserAttPer()) {
             System.out.println("공격에 성공했습니다!");
             return true;
@@ -54,6 +56,14 @@ public class UserService {
         return true;
     }
 
+    public boolean gameEnd() {
+        if (userEntity.getUserLV() < 10) {
+            return false;
+        } else if (userEntity.getUserLV() >= 10) {
+            System.out.println("레벨이 10에 도달하였습니다! 게임을 종료합니다.");
+        }
+        return true;
+    }
 
 }
 
