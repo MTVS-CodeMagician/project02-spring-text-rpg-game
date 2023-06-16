@@ -18,6 +18,6 @@ class UserRepositoryTest {
 
     @Test
     void saveUserName() {
-        assertThrows(IllegalArgumentException.class, () -> userRepository.setUserName("메타버스아카데미"));
+        assertThrows(IllegalArgumentException.class, () -> userRepository.setUserName("뀃뛿뷁3"));
     }
 }
