@@ -1,7 +1,10 @@
 package com.ohjiraffers.project02springtextrpggame.command.domain.service;
 
 import com.ohjiraffers.project02springtextrpggame.command.dto.MonsterDTO;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+@Repository("monsterCService")
 public class MonsterCService implements MonsterService {
     MonsterDTO monsterC=new MonsterDTO();
     public MonsterCService(){
@@ -11,8 +14,13 @@ public class MonsterCService implements MonsterService {
     }
     @Override
     public boolean attack() {
+        System.out.println("몬스터 C 공격!");
         double tempValue=Math.random();
         int perValue=(int)(tempValue*100);
         return perValue<monsterC.getMonAttPer()? true:false;
+    }
+    @Override
+    public int getStone() {
+        return monsterC.getMonStone();
     }
 }
