@@ -7,11 +7,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class UserService {
 
-    ApplicationContext getContext = new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.domain.entity");
+    ApplicationContext getContext =
+            new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.domain.entity");
     UserEntity userEntity = getContext.getBean("userEntity", UserEntity.class);
 
-    ApplicationContext setContext = new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.domain.repository");
+    ApplicationContext setContext =
+            new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.domain.repository");
     UserRepository userRepository = setContext.getBean("userRepository", UserRepository.class);
+
+    //유저 레벨과 스톤의 초깃값
+    public UserService(){
+        this.userRepository.setUserLV(1);
+        this.userRepository.setUserStone(0);
+    }
 
     // 유저가 공격하는 행동
     public boolean attack() {
@@ -34,16 +42,19 @@ public class UserService {
         return userEntity.getUserStone();
     }
 
-    // 레벨업 로직
+    // 레벨업 + 경험치스톤 로직
     public boolean levelUp() {
         if (userEntity.getUserStone() < 3) {
             return false;
         } else if (userEntity.getUserStone() >= 3) {
             userRepository.setUserLV(userEntity.getUserLV() + 1);
             System.out.println("레벨업에 성공하였습니다!");
+            userRepository.setUserStone(0);
         }
         return true;
     }
+
+
 }
 
 

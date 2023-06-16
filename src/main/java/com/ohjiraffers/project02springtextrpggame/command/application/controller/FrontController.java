@@ -36,7 +36,10 @@ public class FrontController {
                 System.out.println("잘못 입력하셨습니다. 닉네임을 다시 입력해주세요");
                 userName = sc.nextLine();
             }
-
         }
+
     }
+
+
+
 }
