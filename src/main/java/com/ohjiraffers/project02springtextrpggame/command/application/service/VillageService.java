@@ -4,4 +4,6 @@ import org.springframework.stereotype.Component;
 
 @Component("village")
 public class VillageService {
+    public void villageStart() {
+    }
 }
