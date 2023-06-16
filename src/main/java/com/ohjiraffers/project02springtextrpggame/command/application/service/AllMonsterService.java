@@ -8,8 +8,6 @@ import java.util.List;
 
 @Service("monsterService")
 public class AllMonsterService {
-
-
     private List<MonsterService> monsterService;
     @Autowired
     public AllMonsterService(List<MonsterService> monsterService) {
