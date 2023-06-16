@@ -13,6 +13,6 @@ public class MonsterCService implements MonsterService {
     public boolean attack() {
         double tempValue=Math.random();
         int perValue=(int)(tempValue*100);
-        return perValue>monsterC.getMonAttPer()? true:false;
+        return perValue<monsterC.getMonAttPer()? true:false;
     }
 }
