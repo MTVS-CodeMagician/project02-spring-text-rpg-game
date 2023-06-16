@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 @Component("userEntity")
 public class UserEntity {
-
     private UserDB userDB = UserDB.getUserInstance();
 
     public String getUserName() {
