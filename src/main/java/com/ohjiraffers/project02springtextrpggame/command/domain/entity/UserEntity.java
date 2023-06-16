@@ -1,7 +1,9 @@
 package com.ohjiraffers.project02springtextrpggame.command.domain.entity;
 
 import com.ohjiraffers.project02springtextrpggame.command.infra.database.UserDB;
+import org.springframework.stereotype.Component;
 
+@Component("userEntity")
 public class UserEntity {
 
     private UserDB userDB = UserDB.getUserInstance();

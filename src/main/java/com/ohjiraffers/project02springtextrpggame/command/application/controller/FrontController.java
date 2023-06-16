@@ -2,6 +2,7 @@ package com.ohjiraffers.project02springtextrpggame.command.application.controlle
 
 import com.ohjiraffers.project02springtextrpggame.command.domain.entity.UserEntity;
 import com.ohjiraffers.project02springtextrpggame.command.domain.repository.UserRepository;
+import com.ohjiraffers.project02springtextrpggame.command.domain.service.UserService;
 import com.ohjiraffers.project02springtextrpggame.command.infra.database.UserDB;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,6 +15,7 @@ public class FrontController {
     ApplicationContext context = new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.domain.repository");
 
     UserEntity userEntity = new UserEntity();
+    UserService userService = new UserService();
 
     UserRepository userRepository = context.getBean("userRepository", UserRepository.class);
 
@@ -22,7 +24,7 @@ public class FrontController {
     public void gameStart() {
         Scanner sc = new Scanner(System.in);
         System.out.println("코드 매지션 RPG 게임에 오신 것을 환영합니다.");
-        System.out.println("닉네임을 2글자에서 5글자 사이로 알맞게 입력하세요.");
+        System.out.println("닉네임을 2글자에서 5글자 사이로 한글로만 알맞게 입력하세요.");
         userName = sc.nextLine();
 
         while (true) {
@@ -36,9 +38,5 @@ public class FrontController {
             }
 
         }
-
-        System.out.println("저장 잘 됐나요?");
-        String userName1 = userEntity.getUserName();
-        System.out.println("userName1 = " + userName1);
     }
 }
