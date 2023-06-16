@@ -1,5 +1,6 @@
 package com.ohjiraffers.project02springtextrpggame.command.application.controller;
 
+import com.ohjiraffers.project02springtextrpggame.command.application.service.VillageService;
 import com.ohjiraffers.project02springtextrpggame.command.domain.entity.UserEntity;
 import com.ohjiraffers.project02springtextrpggame.command.domain.repository.UserRepository;
 import com.ohjiraffers.project02springtextrpggame.command.domain.service.UserService;
@@ -7,17 +8,20 @@ import com.ohjiraffers.project02springtextrpggame.command.infra.database.UserDB;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Component("frontController")
 public class FrontController {
 
-    ApplicationContext context = new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.domain.repository");
+    ApplicationContext repoContext = new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.domain.repository");
+    UserRepository userRepository = repoContext.getBean("userRepository", UserRepository.class);
 
-    UserEntity userEntity = new UserEntity();
-    UserService userService = new UserService();
 
-    UserRepository userRepository = context.getBean("userRepository", UserRepository.class);
+    ApplicationContext villageContext = new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.application.service");
+    VillageService villageService = villageContext.getBean("village", VillageService.class);
+
 
     String userName;
 
@@ -36,7 +40,8 @@ public class FrontController {
                 System.out.println("잘못 입력하셨습니다. 닉네임을 다시 입력해주세요");
                 userName = sc.nextLine();
             }
-
         }
+
+        villageService.villageStart();
     }
 }
