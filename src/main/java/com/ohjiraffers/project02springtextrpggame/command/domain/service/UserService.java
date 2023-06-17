@@ -2,21 +2,13 @@ package com.ohjiraffers.project02springtextrpggame.command.domain.service;
 
 import com.ohjiraffers.project02springtextrpggame.command.domain.entity.UserEntity;
 import com.ohjiraffers.project02springtextrpggame.command.domain.repository.UserRepository;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 public class UserService {
 
-    ApplicationContext getContext =
-            new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.domain.entity");
-    UserEntity userEntity = getContext.getBean("userEntity", UserEntity.class);
-
-    ApplicationContext setContext =
-            new AnnotationConfigApplicationContext("com.ohjiraffers.project02springtextrpggame.command.domain.repository");
-    UserRepository userRepository = setContext.getBean("userRepository", UserRepository.class);
-
+    private UserRepository userRepository;
+    private UserEntity userEntity;
 
 
     //유저 레벨과 스톤의 초깃값
@@ -58,14 +50,8 @@ public class UserService {
         }
     }
 
-    public boolean gameEnd() {
-        if (userEntity.getUserLV() < 10) {
-            System.out.println("gameEnd test 호출");
-            return false;
-        } else if (userEntity.getUserLV() >= 10) {
-            System.out.println("레벨이 10에 도달하였습니다! 게임을 종료합니다.");
-        }
-        return true;
+    public void gameEnd(int gameExit) {
+        System.exit(gameExit);
     }
 
 }
