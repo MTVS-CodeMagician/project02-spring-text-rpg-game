@@ -4,6 +4,8 @@ import com.ohjiraffers.project02springtextrpggame.command.domain.entity.UserEnti
 import com.ohjiraffers.project02springtextrpggame.command.domain.repository.UserRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Repository;
+
 
 public class UserService {
 
@@ -19,9 +21,9 @@ public class UserService {
 
     //유저 레벨과 스톤의 초깃값
     public UserService(){
-        this.userRepository.setUserLV(1);
-        this.userRepository.setUserStone(0);
-        this.userRepository.setUserAttPer(75);
+//        this.userRepository.setUserLV(1);
+//        this.userRepository.setUserStone(0);
+//        this.userRepository.setUserAttPer(75);
     }
 
     // 유저가 공격하는 행동
@@ -45,19 +47,20 @@ public class UserService {
     }
 
     // 레벨업 + 경험치스톤 로직
-    public boolean levelUp() {
+    public void levelUp() {
         if (userEntity.getUserStone() < 3) {
-            return false;
+            System.out.println("레벨업 하지 못했습니다.");
         } else if (userEntity.getUserStone() >= 3) {
+            System.out.println("Test code입니다. UserLv은 : "+userEntity.getUserLV());
             userRepository.setUserLV(userEntity.getUserLV() + 1);
             System.out.println("레벨업에 성공하였습니다!");
             userRepository.setUserStone(0);
         }
-        return true;
     }
 
     public boolean gameEnd() {
         if (userEntity.getUserLV() < 10) {
+            System.out.println("gameEnd test 호출");
             return false;
         } else if (userEntity.getUserLV() >= 10) {
             System.out.println("레벨이 10에 도달하였습니다! 게임을 종료합니다.");

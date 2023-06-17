@@ -17,6 +17,7 @@ public class AllMonsterService {
         return monsterService.get(random).attack();
     }
     int getStone(int random){
+
         return monsterService.get(random).getStone();
     }
 //    public List<MonsterDTO> getAllMonster(){

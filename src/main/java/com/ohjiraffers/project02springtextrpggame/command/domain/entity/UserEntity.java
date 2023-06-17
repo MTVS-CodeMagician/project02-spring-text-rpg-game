@@ -2,9 +2,12 @@ package com.ohjiraffers.project02springtextrpggame.command.domain.entity;
 
 import com.ohjiraffers.project02springtextrpggame.command.infra.database.UserDB;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component("userEntity")
+@Repository("userEntity")
 public class UserEntity {
+
+    // 객체에 대한 검증로직
     private UserDB userDB = UserDB.getUserInstance();
 
     public String getUserName() {

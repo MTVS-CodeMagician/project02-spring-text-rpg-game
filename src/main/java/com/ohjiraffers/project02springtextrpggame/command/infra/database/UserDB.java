@@ -8,9 +8,9 @@ import lombok.*;
 public class UserDB {
 
     private String userName;
-    private int userLV;
-    private int userAttPer;
-    private int userStone;
+    private int userLV=1;
+    private int userAttPer=75;
+    private int userStone=0;
 
     private static final UserDB userInstance = new UserDB();
 
