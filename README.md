@@ -35,7 +35,8 @@
 <br/>
 
 ## Flow Chart
-![image](https://github.com/MTVS-CodeMagician/project02-spring-text-rpg-game/assets/136250818/40fe2b33-175a-4f0e-a503-dda0f3ff588a)
+![image](https://github.com/MTVS-CodeMagician/project02-spring-text-rpg-game/assets/136250818/4e974ba1-9e22-4583-952f-61e4e63240b3)
+
 
 <br/><br/>
 
