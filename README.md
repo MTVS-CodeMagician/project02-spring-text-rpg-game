@@ -1,6 +1,38 @@
-# Project02-Spring-Text-Rpg-Game
-
 # Spring을 이용한 Text-RPG 구현
+
+<br/>
+
+## 기술스택
+
+### Language
+<img src="https://img.shields.io/badge/JAVA-007396?style=flat&logo=Java&logoColor=white">
+
+### Framework
+<img src="https://img.shields.io/badge/spring-6DB33F?style=flat&logo=spring&logoColor=white">
+
+### Tool
+<img src="https://img.shields.io/badge/intellijidea-000000?style=flat&logo=intellijidea&logoColor=white">
+
+<br/><br/>
+
+## 디렉토리 구조
+```
+/src/main
+├── test                     (테스트코드 관련 설정 파일)
+├── application              (#application)
+│   ├── controller           (시스템 메소드 구현)
+│   ├── service              (controller와 domain을 연결)
+│   ├── view                 (#view)
+├── domain                   (Entity, Repository 관리 - DB 테이블과 entity를 1:1 매칭)
+│   ├── entity               (#entity)
+│   ├── repository           (#repository)
+│   ├── service              (#service)
+├── dto                      (#dto)
+├── infra                    (#infra)
+└────── database             (#database)
+
+``` 
+<br/>
 
 ## 프로젝트 소개
 - 미니 RPG GAME
