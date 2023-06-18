@@ -2,11 +2,8 @@ package com.ohjiraffers.project02springtextrpggame.command.domain.repository;
 
 import com.ohjiraffers.project02springtextrpggame.command.infra.database.UserDB;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
-import java.util.*;
-
-@Repository("userRepository")
+@Component("userRepository")
 public class UserRepository {
 
     private UserDB userDB = UserDB.getUserInstance();
