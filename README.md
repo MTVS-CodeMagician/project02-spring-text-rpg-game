@@ -42,7 +42,7 @@
 <br/>
 
 ## 사용자에 대한 정보
-- 시작시 이름을 설정할 수 있다. 단어로만 작성할 수 있으며, 2자 ~ 5자 이내이다.
+- 시작시 이름을 설정할 수 있다. 한국어 단어로만 작성할 수 있으며, 2자 ~ 5자 이내이다.
 - 사용자의 초기 레벨은 1이다.
 - 사용자의 초기 경험치스톤 보유량은 0개이다.
 - 몬스터 공격시 성공 확률은 75%이다.
@@ -97,7 +97,6 @@
 ## 디렉토리 구조
 ```
 /src/main
-├── test                             (테스트코드 관련 설정 파일)
 ├── application                      (#application)
 │   ├── controller                   (시스템 메소드 구현)
 │   ├── service                      (controller와 domain을 연결)
@@ -105,10 +104,12 @@
 ├── domain                           (Entity, Repository 관리 - DB 테이블과 entity를 1:1 매칭)
 │   ├── entity                       (#entity)
 │   ├── repository                   (#repository)
-│   ├── service                      (#service)
+│   └── service                      (#service)
 ├── dto                              (#dto)
 ├── infra                            (#infra)
 └────── database                     (#database)
+/src/test
+└── test                             (테스트코드 관련 설정 파일)
 
 ``` 
 
