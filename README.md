@@ -15,31 +15,33 @@
 
 <br/><br/>
 
-## 디렉토리 구조
-```
-/src/main
-├── test                     (테스트코드 관련 설정 파일)
-├── application              (#application)
-│   ├── controller           (시스템 메소드 구현)
-│   ├── service              (controller와 domain을 연결)
-│   ├── view                 (#view)
-├── domain                   (Entity, Repository 관리 - DB 테이블과 entity를 1:1 매칭)
-│   ├── entity               (#entity)
-│   ├── repository           (#repository)
-│   ├── service              (#service)
-├── dto                      (#dto)
-├── infra                    (#infra)
-└────── database             (#database)
-
-``` 
-<br/>
-
 ## 프로젝트 소개
-- 미니 RPG GAME
+- 텍스트 기반 RPG GAME
 - 사용자가 몬스터를 잡으며 성장하는 게임
+- 저것이다.
+- 이것이다.
+- 저것이다.
+
+## 게임의 기본 정보
+- 사용자의 초기 레벨은 1 입니다.
+- 사용자의 초기 경험치스톤은 0개 입니다.
+- 사용자는 BattleField에서 몬스터를 잡아 경험치스톤을 획득하고, 레벨업을 진행합니다.
+- BattleField에서는 몬스터가 랜덤으로 출현합니다.
+- 몬스터가 가지고 있는 경험치스톤과, 공격 성공 확률은 몬스터마다 다릅니다.
+- 사용자의 레벨이 10에 달성하게 되면 게임은 종료됩니다.
+
+<br/><br/>
+
+## Flow Chart
+![image](https://github.com/MTVS-CodeMagician/project02-spring-text-rpg-game/assets/136250818/40fe2b33-175a-4f0e-a503-dda0f3ff588a)
+
+
+
+## 구체적인 게임 진행 소개
 - 사용자는 해당 캐릭터에 이름을 설정하는 즉시 게임이 시작되며, 초기 장소는 마을이다.
-- 사용자는 마을에서 경험치스톤과 레벨을 확인할 수 있으며, 배틀필드로 이동할 수 있다. 콘솔창에 "배틀필드"를 입력하면 배틀필드로 이동할 수 있다.
-- 사용자는 몬스터를 배틀필드에서 만난다. 등장하는 몬스터의 종류는 랜덤이다.
+- 사용자는 마을에서 경험치스톤과 레벨을 확인할 수 있으며, 배틀필드로 이동할 수 있다.
+- 마을에서는 '배틀필드로 이동하겠습니까'라는 문구가 나타납니다. Y를 누르면 배틀필드로, N를 누르면 마을로 이동합니다.
+- 배틀필드에서는 몬스터가 랜덤으로 출현합니다. 몬스터는 A, B,C가 있습니다.
 - 사용자와 몬스터는 한번씩 번갈아가며 공격할 수 있으며, 항상 사용자가 선공격한다.
 - 공격에 3번 성공하는 쪽이 이긴다.
 - 사용자가 공격에 성공할 시 "공격 성공!" 메세지가 출력되며, 사용자에게 공격 성공한 횟수를 추가한다. 이후 사용자의 공격 성공 횟수를 출력한다. 예시. 1/3, 2/3, 3/3
@@ -78,6 +80,36 @@
 - 몬스터 : 몬스터종류, 죽는 조건, 공격확률, 죽을 시 뱉는 경험치스톤, 배틀필드에서 공격 성공 횟수.
 - 배틀필드 : 사용자와 몬스터가 대결하는 장소이다. 사용자와 몬스터의 공격 성공 횟수가 나타난다. 경기가 끝나면 마을로 자동으로 이동한다.
 - 마을 : 사용자의 레벨과 보유하고 있는 경험치스톤을 확인할 수 있다. 배틀필드로 이동할 수 있다. 콘솔창에 "배틀필드"를 입력하면 배틀필드로 이동할 수 있다.
+
+<br/>
+
+
+## 디렉토리 구조
+```
+/src/main
+├── test                             (테스트코드 관련 설정 파일)
+├── application                      (#application)
+│   ├── controller                   (시스템 메소드 구현)
+│   ├── service                      (controller와 domain을 연결)
+│   ├── view                         (#view)
+├── domain                           (Entity, Repository 관리 - DB 테이블과 entity를 1:1 매칭)
+│   ├── entity                       (#entity)
+│   ├── repository                   (#repository)
+│   ├── service                      (#service)
+├── dto                              (#dto)
+├── infra                            (#infra)
+└────── database                     (#database)
+
+``` 
+
+## 테스트
+```
+1. Domain의 UserRepositoryTest        (#설명)
+2. service의 MonsterCServiceTest      몬스터의 공격 성공 확률이 80%인지 확인.
+3. service의 UserServiceTest          스톤의 갯수가 3 이상이면, 레벨이 오르는지 확인.
+``` 
+
+<br/>
 
 
 ## 제약사항
