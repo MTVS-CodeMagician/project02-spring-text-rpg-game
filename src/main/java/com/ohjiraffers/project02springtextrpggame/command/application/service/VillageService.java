@@ -53,9 +53,6 @@ public class VillageService {
         BattleFieldService battleFieldService = new BattleFieldService();
         UserEntity userEntity=new UserEntity();
 
-        System.out.println("TestStay");
-
-
         Scanner sc = new Scanner(System.in);
         System.out.println(userEntity.getUserName() + "님의 레벨은" + userEntity.getUserLV() + "입니다");
         System.out.println(userEntity.getUserName() + "님의 스톤은" + userEntity.getUserStone() + "개입니다");
