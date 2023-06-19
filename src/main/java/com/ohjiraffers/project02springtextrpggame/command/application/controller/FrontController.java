@@ -26,7 +26,6 @@ public class FrontController {
     String userName;
 
     public void gameStart() {
-        System.out.println("gameStart TEst");
         Scanner sc = new Scanner(System.in);
         System.out.println("코드 매지션 RPG 게임에 오신 것을 환영합니다.");
         System.out.println("닉네임을 2글자에서 5글자 사이로 한글로만 알맞게 입력하세요.");

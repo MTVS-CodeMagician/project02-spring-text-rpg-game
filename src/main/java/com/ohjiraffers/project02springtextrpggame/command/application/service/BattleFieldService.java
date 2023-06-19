@@ -43,14 +43,10 @@ public class BattleFieldService {
                 }
             }
         }
-        System.out.println("Test stone 개수 : "+userEntity.getUserStone());
         if(countM==3){
-            System.out.println("진짜 졌나요? 네ㅜ");
         }
         if(countU==3){
-            System.out.println("진짜 이겼나요? 네!");
             userRepository.setUserStone(userEntity.getUserStone()+allMonsterService.getStone(rand));
-            System.out.println("현재 유저의 스톤개수는 : "+userEntity.getUserStone());
             userService.levelUp();
         }
         if(userEntity.getUserLV() >= 10){
