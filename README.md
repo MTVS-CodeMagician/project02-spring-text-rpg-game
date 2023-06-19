@@ -35,7 +35,8 @@
 <br/>
 
 ## Flow Chart
-![image](https://github.com/MTVS-CodeMagician/project02-spring-text-rpg-game/assets/136250818/40fe2b33-175a-4f0e-a503-dda0f3ff588a)
+![image](https://github.com/MTVS-CodeMagician/project02-spring-text-rpg-game/assets/136250818/4e974ba1-9e22-4583-952f-61e4e63240b3)
+
 
 <br/><br/>
 
@@ -100,14 +101,14 @@
 ├── application                      (#application)
 │   ├── controller                   (시스템 메소드 구현)
 │   ├── service                      (controller와 domain을 연결)
-│   ├── view                         (#view)
+│   ├── view                         (사용자가 요청을 보내고 응답을 받는 화면. 여기서는 콘솔의 역할)
 ├── domain                           (Entity, Repository 관리 - DB 테이블과 entity를 1:1 매칭)
-│   ├── entity                       (#entity)
-│   ├── repository                   (#repository)
-│   └── service                      (#service)
-├── dto                              (#dto)
+│   ├── entity                       (DB의 데이터를 조회하는 로직)
+│   ├── repository                   (DB에 데이터가 저장되기 전에 검증하는 로직 및 테스트를 위해 초기화 하는 로직 구현)
+│   └── service                      (각 객체의 개별적인 기능을 하는 로직)
+├── dto                              (객체 정보 정의)
 ├── infra                            (#infra)
-└────── database                     (#database)
+└────── database                     (데이터베이스)
 /src/test
 └── test                             (테스트코드 관련 설정 파일)
 
